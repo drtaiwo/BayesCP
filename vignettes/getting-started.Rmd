@@ -1,0 +1,25 @@
+---
+title: "Getting Started with BayesCP"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting Started with BayesCP}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, eval=FALSE}
+library(BayesCP)
+
+dat <- bayescp_simulate(n = 100, tau = 50, mu1 = 0, mu2 = 1, seed = 1)
+prior <- bayescp_prior(m01 = 0, m02 = 1, kappa01 = 5, kappa02 = 5)
+fit <- bayescp_fit(dat$y, prior = prior, draws = 2000, seed = 1)
+
+summary(fit)
+plot(fit, type = "posterior")
+```
+
+## Checkpoint recovery
+
+The study runner writes one atomic RDS checkpoint per scenario. A repeated call
+with the same scenario identifier, replication count, and draw count validates
+and reloads the saved output instead of recomputing it.

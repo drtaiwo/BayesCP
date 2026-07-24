@@ -1,0 +1,14 @@
+citHeader("To cite BayesCP in publications use:")
+
+citEntry(
+  entry = "Manual",
+  title = "BayesCP: Exact Bayesian Gaussian Change-Point Analysis with Reproducible Simulation Workflows",
+  author = personList(as.person("Taiwo M. Adegoke")),
+  year = "2026",
+  note = "R package version 0.2.0",
+  textVersion = paste(
+    "Adegoke, T. M. (2026). BayesCP: Exact Bayesian Gaussian",
+    "Change-Point Analysis with Reproducible Simulation Workflows.",
+    "R package version 0.2.0."
+  )
+)
