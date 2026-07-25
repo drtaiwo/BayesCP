@@ -2,7 +2,7 @@ Package: ExactBayesCP
 Type: Package
 Title: Exact Bayesian Gaussian Single Change-Point Analysis Using Informative
         Conjugate Priors
-Version: 0.2.2
+Version: 0.2.3
 Authors@R: c(
     person(
       given = "Taiwo Mobolaji",
