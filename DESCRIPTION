@@ -15,6 +15,6 @@ Imports: graphics, grDevices, stats, utils
 Suggests: knitr, rmarkdown, testthat (>= 3.0.0)
 VignetteBuilder: knitr
 Config/testthat/edition: 3
-URL: https://github.com/USERNAME/BayesCP
-BugReports: https://github.com/USERNAME/BayesCP/issues
+URL: https://github.com/drtaiwo/BayesCP
+BugReports: https://github.com/drtaiwo/BayesCP/issues
 Config/roxygen2/version: 8.0.0
