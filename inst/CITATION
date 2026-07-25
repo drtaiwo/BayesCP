@@ -1,14 +1,15 @@
-citHeader("To cite ExactBayesCP in publications use:")
+citHeader("To cite ExactBayesCP in publications, please use:")
 
 bibentry(
   bibtype = "Manual",
   title = "ExactBayesCP: Exact Bayesian Gaussian Single Change-Point Analysis Using Informative Conjugate Priors",
   author = c(
-    person("Taiwo Mobolaji", "Adegoke"),
-    person("Waheed Babatunde", "Yahya"),
-    person("Oladapo Muyiwa", "Oladoja")
+    person("Taiwo M.", "Adegoke"),
+    person("W. B.", "Yahya"),
+    person("O. M.", "Oladoja")
   ),
   year = "2026",
-  note = "R package version 0.2.2",
+  note = "R package version 0.2.3",
+  doi = "10.5281/zenodo.21554871",
   url = "https://github.com/drtaiwo/ExactBayesCP"
 )

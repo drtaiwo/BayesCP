@@ -1,7 +1,13 @@
 # ExactBayesCP
 
-**ExactBayesCP** is an initial research-grade R package for exact Bayesian Gaussian
-single-change analysis with reproducible, fault-tolerant simulation workflows.
+**Exact Bayesian Gaussian Single Change-Point Analysis Using Informative Conjugate Priors**
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21554871.svg)](https://doi.org/10.5281/zenodo.21554871)
+
+ExactBayesCP is an R package for exact Bayesian inference for a single
+change point in the mean of a Gaussian sequence under a common variance
+using informative conjugate priors.
+
 
 ## Core capabilities
 
@@ -108,3 +114,18 @@ bayescp_save_plots(fit, directory = "figures")
 ```
 
 Compatible incomplete checkpoints are extended from the first missing replication.
+
+
+## Citation
+
+If you use ExactBayesCP in research, please cite:
+
+> Adegoke, T. M., Yahya, W. B., & Oladoja, O. M. (2026).
+> *ExactBayesCP: Exact Bayesian Gaussian Single Change-Point Analysis Using
+> Informative Conjugate Priors* (Version 0.2.3) [Computer software].
+> Zenodo. https://doi.org/10.5281/zenodo.21554871
+
+In R, the citation can be obtained using:
+
+```r
+citation("ExactBayesCP")

@@ -1,0 +1,30 @@
+{
+  "title": "ExactBayesCP: Exact Bayesian Gaussian Single Change-Point Analysis Using Informative Conjugate Priors",
+  "description": "ExactBayesCP is an R package for exact Bayesian inference for a single change point in the mean of a Gaussian sequence under a common variance using informative conjugate priors. The package provides exact posterior computation, direct posterior simulation, prior-sensitivity analysis, numerical validation, reproducible simulation workflows, checkpointing, and diagnostic tools.",
+  "creators": [
+    {
+      "name": "Adegoke, Taiwo M.",
+      "orcid": "0000-0003-2507-4973"
+    },
+    {
+      "name": "Yahya, W. B."
+    },
+    {
+      "name": "Oladoja, O. M."
+    }
+  ],
+  "license": "MIT",
+  "upload_type": "software",
+  "version": "0.2.3",
+  "keywords": [
+    "Bayesian statistics",
+    "change-point analysis",
+    "Gaussian change-point model",
+    "informative priors",
+    "conjugate priors",
+    "exact Bayesian inference",
+    "statistical computing",
+    "reproducible research",
+    "R package"
+  ]
+}
