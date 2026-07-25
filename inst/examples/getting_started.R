@@ -1,4 +1,4 @@
-library(BayesCP)
+library(ExactBayesCP)
 
 
 

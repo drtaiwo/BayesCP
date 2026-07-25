@@ -2,7 +2,7 @@
 % Please edit documentation in R/checkpoint-study.R
 \name{bayescp_read_checkpoint}
 \alias{bayescp_read_checkpoint}
-\title{Read one BayesCP checkpoint}
+\title{Read one ExactBayesCP checkpoint}
 \usage{
 bayescp_read_checkpoint(scenario_id, output_dir = "bayescp_study")
 }
@@ -15,5 +15,5 @@ bayescp_read_checkpoint(scenario_id, output_dir = "bayescp_study")
 The checkpoint object.
 }
 \description{
-Read one BayesCP checkpoint
+Read one ExactBayesCP checkpoint
 }

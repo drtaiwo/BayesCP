@@ -2,7 +2,7 @@
 % Please edit documentation in R/checkpoint-study.R
 \name{bayescp_list_checkpoints}
 \alias{bayescp_list_checkpoints}
-\title{List BayesCP checkpoints}
+\title{List ExactBayesCP checkpoints}
 \usage{
 bayescp_list_checkpoints(output_dir = "bayescp_study")
 }
@@ -13,5 +13,5 @@ bayescp_list_checkpoints(output_dir = "bayescp_study")
 A data frame describing available checkpoint files.
 }
 \description{
-List BayesCP checkpoints
+List ExactBayesCP checkpoints
 }

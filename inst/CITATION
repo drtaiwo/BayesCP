@@ -1,14 +1,14 @@
-citHeader("To cite BayesCP in publications use:")
+citHeader("To cite ExactBayesCP in publications use:")
 
-citEntry(
-  entry = "Manual",
-  title = "BayesCP: Exact Bayesian Gaussian Change-Point Analysis with Reproducible Simulation Workflows",
-  author = personList(as.person("Taiwo M. Adegoke")),
+bibentry(
+  bibtype = "Manual",
+  title = "ExactBayesCP: Exact Bayesian Gaussian Single Change-Point Analysis Using Informative Conjugate Priors",
+  author = c(
+    person("Taiwo Mobolaji", "Adegoke"),
+    person("Waheed Babatunde", "Yahya"),
+    person("Oladapo Muyiwa", "Oladoja")
+  ),
   year = "2026",
-  note = "R package version 0.2.0",
-  textVersion = paste(
-    "Adegoke, T. M. (2026). BayesCP: Exact Bayesian Gaussian",
-    "Change-Point Analysis with Reproducible Simulation Workflows.",
-    "R package version 0.2.0."
-  )
+  note = "R package version 0.2.2",
+  url = "https://github.com/drtaiwo/ExactBayesCP"
 )

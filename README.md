@@ -1,6 +1,6 @@
-# BayesCP
+# ExactBayesCP
 
-**BayesCP** is an initial research-grade R package for exact Bayesian Gaussian
+**ExactBayesCP** is an initial research-grade R package for exact Bayesian Gaussian
 single-change analysis with reproducible, fault-tolerant simulation workflows.
 
 ## Core capabilities
@@ -16,17 +16,20 @@ single-change analysis with reproducible, fault-tolerant simulation workflows.
 - Reproducible Monte Carlo study execution.
 - Nile River example.
 
-## Install from the source folder
+## Installation
+
+Install the development version from GitHub:
 
 ```r
-install.packages("path/to/BayesCP", repos = NULL, type = "source")
-library(BayesCP)
+install.packages("remotes")
+remotes::install_github("drtaiwo/ExactBayesCP")
+library(ExactBayesCP)
 ```
 
 ## Quick example
 
 ```r
-library(BayesCP)
+library(ExactBayesCP)
 
 dat <- bayescp_simulate(
   n = 100,
@@ -85,11 +88,11 @@ unfinished or invalid scenario.
 
 ## Development status
 
-Version 0.1.0 is an initial package scaffold and functional core. Before CRAN
-submission, replace placeholder author contact and repository URLs, run
-`R CMD check`, complete formal documentation, and conduct independent numerical
-validation.
-
+Version 0.2.2 is the first release under the `ExactBayesCP` name. It retains
+the validated exact Gaussian single-change computational core while updating
+the package identity, citation metadata, documentation, examples, and repository
+references. The current statistical scope is a single change in the Gaussian
+mean with a common variance across segments.
 
 ## Version 0.2.0 additions
 

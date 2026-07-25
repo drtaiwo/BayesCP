@@ -101,7 +101,7 @@ bayescp_run_study <- function(scenarios, priors,
     scenario_priors <- if (is.function(priors)) priors(sc) else priors
     if (!is.list(scenario_priors) ||
         !all(vapply(scenario_priors, inherits, logical(1), "bayescp_prior"))) {
-      stop("`priors` must be a list of BayesCP priors or a function returning one.",
+      stop("`priors` must be a list of ExactBayesCP priors or a function returning one.",
            call. = FALSE)
     }
     if (is.null(names(scenario_priors))) {
@@ -194,7 +194,7 @@ bayescp_run_study <- function(scenarios, priors,
   final
 }
 
-#' List BayesCP checkpoints
+#' List ExactBayesCP checkpoints
 #'
 #' @param output_dir Study output directory.
 #' @return A data frame describing available checkpoint files.
@@ -215,7 +215,7 @@ bayescp_list_checkpoints <- function(output_dir = "bayescp_study") {
   )
 }
 
-#' Read one BayesCP checkpoint
+#' Read one ExactBayesCP checkpoint
 #'
 #' @param scenario_id Scenario identifier.
 #' @param output_dir Study output directory.

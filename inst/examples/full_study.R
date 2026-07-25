@@ -1,4 +1,4 @@
-library(BayesCP)
+library(ExactBayesCP)
 
 scenarios <- expand.grid(
   n = c(50, 100, 200),

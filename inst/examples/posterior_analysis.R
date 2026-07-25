@@ -1,8 +1,8 @@
 # ============================================================
-# BayesCP: Posterior Analysis Example
+# ExactBayesCP: Posterior Analysis Example
 # ============================================================
 
-library(BayesCP)
+library(ExactBayesCP)
 
 # ------------------------------------------------------------
 # 1. Simulate an ordered Gaussian series

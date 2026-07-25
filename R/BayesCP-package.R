@@ -1,11 +1,13 @@
-#' BayesCP: Exact Bayesian Gaussian Change-Point Analysis
+#' ExactBayesCP: Exact Bayesian Gaussian Single Change-Point Analysis
 #'
 #' @description
-#' BayesCP provides exact conjugate Bayesian inference for a single
-#' Gaussian change point with segment-specific means and a common variance.
-#' The package supports collapsed posterior computation, direct posterior
-#' simulation, posterior summaries, visualization, numerical validation,
-#' checkpoint recovery, and reproducible Monte Carlo simulation workflows.
+#' ExactBayesCP provides exact conjugate Bayesian inference for a single
+#' Gaussian change point in the mean under a common variance. The package
+#' supports weakly informative and informative conjugate priors, collapsed
+#' posterior computation, direct posterior simulation, posterior summaries,
+#' prior-sensitivity analysis, prior-data conflict assessment, posterior
+#' robustness evaluation, numerical validation, checkpoint recovery, and
+#' reproducible Monte Carlo simulation workflows.
 #'
 #' @details
 #' The principal functions are:
@@ -19,19 +21,18 @@
 #'   \item \code{\link{bayescp_save_plots}} for exporting standard figures.
 #' }
 #'
+#' ExactBayesCP is designed to support reproducible computational studies of
+#' finite-sample Bayesian change-point inference, including investigations of
+#' operating characteristics, informative-prior behaviour, prior-data conflict,
+#' and posterior robustness.
+#'
 #' @author
-#' Taiwo Adegoke
+#' Taiwo M. Adegoke, W. B. Yahya, and O. M. Oladoja
 #'
 #' @references
-#' Adegoke, T. M. BayesCP: Exact Bayesian Gaussian Change-Point
-#' Analysis with Reproducible Simulation Workflows.
-#'
-#' @keywords internal
-#'
-#' @docType package
-#' @name BayesCP-package
-#'
-#' @aliases BayesCP
+#' Adegoke, T. M., Yahya, W. B., and Oladoja, O. M. ExactBayesCP:
+#' Exact Bayesian Gaussian Single Change-Point Analysis Using Informative
+#' Conjugate Priors.
 #'
 #' @seealso
 #' \code{\link{bayescp_fit}},
@@ -63,4 +64,5 @@
 #'
 #' summary(fit)
 #'
-NULL
+#' @keywords internal
+"_PACKAGE"

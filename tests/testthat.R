@@ -1,4 +1,4 @@
 library(testthat)
-library(BayesCP)
+library(ExactBayesCP)
 
-test_check("BayesCP")
+test_check("ExactBayesCP")

@@ -24,7 +24,7 @@ summary.bayescp_fit <- function(object, ...) {
 
 #' @export
 print.summary.bayescp_fit <- function(x, ...) {
-  cat("BayesCP posterior summary\n-------------------------\n")
+  cat("ExactBayesCP posterior summary\n-------------------------\n")
   cat("n:",x$n,"\nprior:",x$prior,"\nMAP:",x$map,"\n")
   cat("mean:",sprintf("%.3f",x$mean),"\nmedian:",x$median,"\n")
   cat("SD:",sprintf("%.3f",x$sd),"\ninterval:",paste(x$interval,collapse=" to "),"\n")

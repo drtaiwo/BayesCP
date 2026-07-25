@@ -1,14 +1,14 @@
 ---
-title: "Getting Started with BayesCP"
+title: "Getting Started with ExactBayesCP"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Getting Started with BayesCP}
+  %\VignetteIndexEntry{Getting Started with ExactBayesCP}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
 ```{r, eval=FALSE}
-library(BayesCP)
+library(ExactBayesCP)
 
 dat <- bayescp_simulate(n = 100, tau = 50, mu1 = 0, mu2 = 1, seed = 1)
 prior <- bayescp_prior(m01 = 0, m02 = 1, kappa01 = 5, kappa02 = 5)
