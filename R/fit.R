@@ -143,7 +143,7 @@ bayescp_fit <- function(y, prior = bayescp_prior(),
   out
 }
 
-#' Validate a fitted BayesCP object
+#' Validate a fitted ExactBayesCP object
 #'
 #' @param object A `bayescp_fit` object.
 #' @param tolerance Numerical tolerance.
@@ -168,7 +168,7 @@ bayescp_validate_fit <- function(object, tolerance = 1e-8, error = FALSE) {
       object$posterior$p_max <= 1 + tolerance
   )
   if (isTRUE(error) && !all(checks)) {
-    stop("BayesCP validation failed: ",
+    stop("ExactBayesCP validation failed: ",
          paste(names(checks)[!checks], collapse = ", "), call. = FALSE)
   }
   checks
