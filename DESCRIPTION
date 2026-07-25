@@ -1,8 +1,30 @@
 Package: BayesCP
 Type: Package
 Title: Exact Bayesian Gaussian Change-Point Analysis with Reproducible Simulation Workflows
-Version: 0.2.0
-Authors@R: person("Taiwo", "Adegoke", email = "adegoketaiwom@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0003-2507-4973"))
+Version: 0.2.1
+Authors@R: c(
+    person(
+      given = "Taiwo Mobolaji",
+      family = "Adegoke",
+      email = "adegoketaiwom@gmail.com",
+      role = c("aut", "cre"),
+      comment = c(ORCID = "0000-0003-2507-4973")
+    ),
+    person(
+      given = "Waheed Babatunde",
+      family = "Yahya",
+      email = "dr.yah2009@gmail.com",
+      role = "aut",
+      comment = c(ORCID = "0000-0001-9193-5458")
+    ),
+    person(
+      given = "Oladapo Muyiwa",
+      family = "Oladoja",
+      email = "oladojadapo@gmail.com",
+      role = "aut",
+      comment = c(ORCID = "0000-0002-0766-2248")
+    )
+  )
 Description: Exact conjugate Bayesian inference for a single Gaussian change point
     with segment-specific means and a common variance. The package provides
     collapsed posterior computation, direct posterior simulation, prior-sensitivity
