@@ -33,3 +33,17 @@ An object of class `bayescp_prior`.
 \description{
 Construct a conjugate prior specification
 }
+\examples{
+prior <- bayescp_prior(
+  m01 = 0,
+  m02 = 1,
+  kappa01 = 5,
+  kappa02 = 5,
+  a0 = 2,
+  b0 = 1,
+  label = "moderate"
+)
+
+prior
+
+}

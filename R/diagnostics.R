@@ -8,6 +8,11 @@
 #' A list containing the package version, R version, imported packages,
 #' suggested packages, and session information.
 #'
+#' @examples
+#' info <- bayescp_dependencies()
+#' info$package_version
+#' info$r_version
+#'
 #' @export
 bayescp_dependencies <- function() {
   desc <- utils::packageDescription("ExactBayesCP")
@@ -44,6 +49,32 @@ bayescp_dependencies <- function() {
 #'
 #' @return
 #' Invisibly returns a named logical vector containing the diagnostic checks.
+#'
+#' @examples
+#' dat <- bayescp_simulate(
+#'   n = 100,
+#'   tau = 50,
+#'   mu1 = 0,
+#'   mu2 = 1,
+#'   sigma = 1,
+#'   seed = 123
+#' )
+#'
+#' prior <- bayescp_prior(
+#'   m01 = 0,
+#'   m02 = 1,
+#'   kappa01 = 5,
+#'   kappa02 = 5
+#' )
+#'
+#' fit <- bayescp_fit(
+#'   dat$y,
+#'   prior = prior,
+#'   draws = 200,
+#'   seed = 123
+#' )
+#'
+#' bayescp_diagnostics(fit)
 #'
 #' @export
 bayescp_diagnostics <- function(object, print = TRUE) {
@@ -113,6 +144,44 @@ bayescp_diagnostics <- function(object, print = TRUE) {
 #'
 #' @return
 #' Invisibly returns a character vector containing the paths of created files.
+#'
+#' @examples
+#' dat <- bayescp_simulate(
+#'   n = 100,
+#'   tau = 50,
+#'   mu1 = 0,
+#'   mu2 = 1,
+#'   sigma = 1,
+#'   seed = 123
+#' )
+#'
+#' fit <- bayescp_fit(
+#'   dat$y,
+#'   prior = bayescp_prior(
+#'     m01 = 0,
+#'     m02 = 1,
+#'     kappa01 = 5,
+#'     kappa02 = 5
+#'   ),
+#'   draws = 100,
+#'   seed = 123
+#' )
+#'
+#' tmp <- tempfile("exactbayescp_plots_")
+#'
+#' files <- bayescp_save_plots(
+#'   fit,
+#'   directory = tmp,
+#'   formats = "png",
+#'   types = "posterior",
+#'   width = 800,
+#'   height = 600,
+#'   res = 100
+#' )
+#'
+#' files
+#'
+#' unlink(tmp, recursive = TRUE)
 #'
 #' @export
 bayescp_save_plots <- function(

@@ -30,3 +30,17 @@ A list containing the generated series and true parameters.
 \description{
 Simulate a Gaussian single-change series
 }
+\examples{
+dat <- bayescp_simulate(
+  n = 100,
+  tau = 50,
+  mu1 = 0,
+  mu2 = 1,
+  sigma = 1,
+  seed = 123
+)
+
+head(dat$y)
+dat$truth
+
+}

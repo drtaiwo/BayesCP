@@ -17,3 +17,17 @@ A named list of three `bayescp_prior` objects.
 \description{
 Create weak, moderate, and strong prior specifications
 }
+\examples{
+priors <- bayescp_prior_grid(
+  m01 = 0,
+  m02 = 1,
+  a0 = 2,
+  b0 = 1
+)
+
+names(priors)
+priors$weak
+priors$moderate
+priors$strong
+
+}

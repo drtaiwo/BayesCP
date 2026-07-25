@@ -20,3 +20,30 @@ Performs internal numerical and structural checks on an object returned by
 that draws are present, finite, and that sampled change-point values lie
 within the supported candidate set.
 }
+\examples{
+dat <- bayescp_simulate(
+  n = 100,
+  tau = 50,
+  mu1 = 0,
+  mu2 = 1,
+  sigma = 1,
+  seed = 123
+)
+
+prior <- bayescp_prior(
+  m01 = 0,
+  m02 = 1,
+  kappa01 = 5,
+  kappa02 = 5
+)
+
+fit <- bayescp_fit(
+  dat$y,
+  prior = prior,
+  draws = 200,
+  seed = 123
+)
+
+bayescp_diagnostics(fit)
+
+}

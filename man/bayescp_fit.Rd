@@ -32,3 +32,30 @@ An object of class `bayescp_fit`.
 \description{
 Fit an exact Bayesian Gaussian single-change model
 }
+\examples{
+dat <- bayescp_simulate(
+  n = 100,
+  tau = 50,
+  mu1 = 0,
+  mu2 = 1,
+  sigma = 1,
+  seed = 123
+)
+
+prior <- bayescp_prior(
+  m01 = 0,
+  m02 = 1,
+  kappa01 = 5,
+  kappa02 = 5
+)
+
+fit <- bayescp_fit(
+  dat$y,
+  prior = prior,
+  draws = 200,
+  seed = 123
+)
+
+summary(fit)
+
+}

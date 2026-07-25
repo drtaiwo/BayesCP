@@ -38,3 +38,42 @@ Invisibly returns a character vector containing the paths of created files.
 Exports selected graphical summaries from a fitted `bayescp_fit` object
 to PNG and/or PDF files.
 }
+\examples{
+dat <- bayescp_simulate(
+  n = 100,
+  tau = 50,
+  mu1 = 0,
+  mu2 = 1,
+  sigma = 1,
+  seed = 123
+)
+
+fit <- bayescp_fit(
+  dat$y,
+  prior = bayescp_prior(
+    m01 = 0,
+    m02 = 1,
+    kappa01 = 5,
+    kappa02 = 5
+  ),
+  draws = 100,
+  seed = 123
+)
+
+tmp <- tempfile("exactbayescp_plots_")
+
+files <- bayescp_save_plots(
+  fit,
+  directory = tmp,
+  formats = "png",
+  types = "posterior",
+  width = 800,
+  height = 600,
+  res = 100
+)
+
+files
+
+unlink(tmp, recursive = TRUE)
+
+}

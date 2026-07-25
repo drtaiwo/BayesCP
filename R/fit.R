@@ -7,6 +7,33 @@
 #' @param draws Number of direct posterior draws. Use zero to skip draws.
 #' @param seed Optional random seed for direct posterior simulation.
 #' @return An object of class `bayescp_fit`.
+#'
+#' @examples
+#' dat <- bayescp_simulate(
+#'   n = 100,
+#'   tau = 50,
+#'   mu1 = 0,
+#'   mu2 = 1,
+#'   sigma = 1,
+#'   seed = 123
+#' )
+#'
+#' prior <- bayescp_prior(
+#'   m01 = 0,
+#'   m02 = 1,
+#'   kappa01 = 5,
+#'   kappa02 = 5
+#' )
+#'
+#' fit <- bayescp_fit(
+#'   dat$y,
+#'   prior = prior,
+#'   draws = 200,
+#'   seed = 123
+#' )
+#'
+#' summary(fit)
+#'
 #' @export
 bayescp_fit <- function(y, prior = bayescp_prior(),
                         min_seg = 5L, level = 0.95,
@@ -149,6 +176,30 @@ bayescp_fit <- function(y, prior = bayescp_prior(),
 #' @param tolerance Numerical tolerance.
 #' @param error If `TRUE`, stop when validation fails.
 #' @return A named logical vector.
+#'
+#' @examples
+#' dat <- bayescp_simulate(
+#'   n = 100,
+#'   tau = 50,
+#'   mu1 = 0,
+#'   mu2 = 1,
+#'   sigma = 1,
+#'   seed = 123
+#' )
+#'
+#' fit <- bayescp_fit(
+#'   dat$y,
+#'   prior = bayescp_prior(
+#'     m01 = 0,
+#'     m02 = 1,
+#'     kappa01 = 5,
+#'     kappa02 = 5
+#'   ),
+#'   draws = 0
+#' )
+#'
+#' bayescp_validate_fit(fit)
+#'
 #' @export
 bayescp_validate_fit <- function(object, tolerance = 1e-8, error = FALSE) {
   checks <- c(

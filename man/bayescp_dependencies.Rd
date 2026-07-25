@@ -14,3 +14,9 @@ suggested packages, and session information.
 Reports the installed ExactBayesCP version, R version, declared imports,
 suggested packages, and current session information.
 }
+\examples{
+info <- bayescp_dependencies()
+info$package_version
+info$r_version
+
+}

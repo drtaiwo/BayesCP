@@ -19,3 +19,27 @@ A named logical vector.
 \description{
 Validate a fitted ExactBayesCP object
 }
+\examples{
+dat <- bayescp_simulate(
+  n = 100,
+  tau = 50,
+  mu1 = 0,
+  mu2 = 1,
+  sigma = 1,
+  seed = 123
+)
+
+fit <- bayescp_fit(
+  dat$y,
+  prior = bayescp_prior(
+    m01 = 0,
+    m02 = 1,
+    kappa01 = 5,
+    kappa02 = 5
+  ),
+  draws = 0
+)
+
+bayescp_validate_fit(fit)
+
+}
