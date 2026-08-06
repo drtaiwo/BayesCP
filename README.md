@@ -2,7 +2,7 @@
 
 **Exact Bayesian Gaussian Single Change-Point Analysis Using Informative Conjugate Priors**
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21554871.svg)](https://doi.org/10.5281/zenodo.21554871)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21554870.svg)](https://doi.org/10.5281/zenodo.21554870)
 
 ExactBayesCP is an R package for exact Bayesian inference for a single
 change point in the mean of a Gaussian sequence under a common variance
@@ -60,6 +60,43 @@ fit <- bayescp_fit(dat$y, prior = prior, draws = 2000, seed = 123)
 print(fit)
 summary(fit)
 plot(fit)
+```
+
+## Flexible prior specification in version 0.3.0
+
+All prior interfaces are converted internally to the same
+Normal--Inverse--Gamma representation, preserving exact inference.
+
+```r
+# Preset concentration
+p_weak <- bayescp_prior(preset = "weak", m01 = 0, m02 = 1)
+p_strong <- bayescp_prior("strong")
+
+# Direct conjugate hyperparameters
+p_direct <- bayescp_prior(
+  m01 = 0, m02 = 1,
+  kappa01 = 5, kappa02 = 5,
+  a0 = 3, b0 = 2
+)
+
+# Scaled inverse-chi-square variance prior
+p_chisq <- bayescp_prior(
+  m01 = 0, m02 = 1,
+  kappa01 = 5, kappa02 = 5,
+  variance_prior = "scaled_inv_chisq",
+  nu0 = 10, s02 = 4
+)
+
+# Expert-knowledge interface
+p_expert <- bayescp_prior(
+  mu1 = list(mean = 10, sd = 2),
+  mu2 = list(mean = 18, sd = 3),
+  variance = list(mean = 5, strength = 12),
+  label = "expert prior"
+)
+
+summary(p_expert)
+plot(p_expert)
 ```
 
 ## Fault-tolerant simulation study
@@ -122,10 +159,47 @@ If you use ExactBayesCP in research, please cite:
 
 > Adegoke, T. M., Yahya, W. B., & Oladoja, O. M. (2026).
 > *ExactBayesCP: Exact Bayesian Gaussian Single Change-Point Analysis Using
-> Informative Conjugate Priors* (Version 0.2.3) [Computer software].
-> Zenodo. https://doi.org/10.5281/zenodo.21554871
+> Informative Conjugate Priors* (Version 0.3.0) [Computer software].
+> Zenodo. https://doi.org/10.5281/zenodo.21554870
 
 In R, the citation can be obtained using:
 
 ```r
 citation("ExactBayesCP")
+```
+
+
+## New developer features in version 0.3.0
+
+Version 0.3.0 adds the manuscript-facing tools needed for uncertainty-aware
+operating-characteristic analysis:
+
+```r
+# No-change versus one-change model comparison
+mc <- bayescp_compare_models(
+  dat$y,
+  prior_change = prior,
+  prior_no_change = bayescp_prior(m01 = mean(dat$y))
+)
+print(mc)
+
+# Prior-data conflict at the posterior MAP
+bayescp_conflict(fit)
+
+# Monte Carlo summaries and paired prior comparisons
+oc <- bayescp_summarise_study(result)
+cmp <- bayescp_compare_priors(
+  result,
+  benchmark = "weak",
+  margins = c(0.10, 0.05, 0.15),
+  bootstrap = 1000
+)
+
+# Runtime benchmark for exact collapsed inference
+bayescp_benchmark()
+```
+
+Checkpoint compatibility now depends on a configuration signature incorporating
+the scenario, priors, minimum segment length, seed, draw count, and package
+version. This prevents stale results from being loaded after a study design or
+prior specification changes.

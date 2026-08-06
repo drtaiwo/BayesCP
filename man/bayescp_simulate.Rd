@@ -2,7 +2,7 @@
 % Please edit documentation in R/simulate.R
 \name{bayescp_simulate}
 \alias{bayescp_simulate}
-\title{Simulate a Gaussian single-change series}
+\title{Simulate a Gaussian or robustness single-change series}
 \usage{
 bayescp_simulate(
   n = 100L,
@@ -10,7 +10,14 @@ bayescp_simulate(
   mu1 = 0,
   mu2 = 1,
   sigma = 1,
-  seed = NULL
+  seed = NULL,
+  sigma1 = sigma,
+  sigma2 = sigma,
+  error_distribution = c("normal", "student_t", "contaminated_normal"),
+  df = 5,
+  ar1 = 0,
+  contamination_prob = 0.05,
+  contamination_multiplier = 5
 )
 }
 \arguments{
@@ -20,27 +27,26 @@ bayescp_simulate(
 
 \item{mu1, mu2}{Segment means.}
 
-\item{sigma}{Common standard deviation.}
+\item{sigma}{Common standard deviation retained for backward compatibility.}
 
 \item{seed}{Optional random seed.}
+
+\item{sigma1, sigma2}{Optional segment-specific standard deviations.}
+
+\item{error_distribution}{One of `"normal"`, `"student_t"`, or
+`"contaminated_normal"`.}
+
+\item{df}{Student-t degrees of freedom.}
+
+\item{ar1}{AR(1) coefficient.}
+
+\item{contamination_prob}{Contamination probability.}
+
+\item{contamination_multiplier}{Contaminated-normal SD multiplier.}
 }
 \value{
 A list containing the generated series and true parameters.
 }
 \description{
-Simulate a Gaussian single-change series
-}
-\examples{
-dat <- bayescp_simulate(
-  n = 100,
-  tau = 50,
-  mu1 = 0,
-  mu2 = 1,
-  sigma = 1,
-  seed = 123
-)
-
-head(dat$y)
-dat$truth
-
+Simulate a Gaussian or robustness single-change series
 }

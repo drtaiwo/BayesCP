@@ -26,3 +26,41 @@ test_that("checkpoint recovery reuses completed scenarios", {
   )
   expect_equal(first$results, second$results)
 })
+
+test_that("preset prior interface is backward compatible", {
+  p <- bayescp_prior(preset = "moderate", m01 = 0, m02 = 2)
+  expect_s3_class(p, "bayescp_prior")
+  expect_equal(p$kappa01, 5)
+  expect_equal(p$kappa02, 5)
+  expect_equal(p$m02, 2)
+})
+
+test_that("scaled inverse-chi-square maps to inverse-gamma", {
+  p <- bayescp_prior(
+    variance_prior = "scaled_inv_chisq",
+    nu0 = 10, s02 = 4
+  )
+  expect_equal(p$a0, 5)
+  expect_equal(p$b0, 20)
+  expect_equal(p$variance_prior$parameterization, "scaled_inv_chisq")
+})
+
+test_that("expert interface preserves requested variance mean", {
+  p <- bayescp_prior(
+    mu1 = list(mean = 10, sd = 2),
+    mu2 = list(mean = 18, sd = 3),
+    variance = list(mean = 5, strength = 12)
+  )
+  expect_equal(p$m01, 10)
+  expect_equal(p$m02, 18)
+  expect_equal(p$variance_prior$prior_mean, 5, tolerance = 1e-12)
+  expect_equal(p$kappa01, 5 / 4, tolerance = 1e-12)
+  expect_equal(p$kappa02, 5 / 9, tolerance = 1e-12)
+})
+
+test_that("invalid expert variance strength is rejected", {
+  expect_error(
+    bayescp_prior(variance = list(mean = 5, strength = 2)),
+    "greater than 2"
+  )
+})

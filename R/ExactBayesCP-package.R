@@ -25,7 +25,7 @@
 #' @references
 #' Adegoke, T. M., Yahya, W. B., and Oladoja, O. M. (2026).
 #' ExactBayesCP: Exact Bayesian Gaussian Single Change-Point Analysis Using
-#' Informative Conjugate Priors. R package version 0.2.2.
+#' Informative Conjugate Priors. R package version 0.3.0.
 #'
 #' @keywords internal
 #'

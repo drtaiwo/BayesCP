@@ -1,8 +1,8 @@
 Package: ExactBayesCP
 Type: Package
-Title: Exact Bayesian Gaussian Single Change-Point Analysis Using Informative
-        Conjugate Priors
-Version: 0.2.3
+Title: Exact Bayesian Gaussian Single Change-Point Analysis Using
+        Informative Conjugate Priors
+Version: 0.3.0
 Authors@R: c(
     person(
       given = "Taiwo Mobolaji",
@@ -28,10 +28,15 @@ Authors@R: c(
   )
 Description: Provides exact conjugate Bayesian inference for a single change point
     in the mean of a Gaussian sequence under a common variance. The package supports
-    weakly informative and informative conjugate prior configurations, collapsed
+    flexible weakly informative and informative conjugate prior configurations,
+    including preset, direct-hyperparameter, expert-knowledge, inverse-gamma, and
+    scaled inverse-chi-square interfaces, collapsed
     posterior computation, direct posterior simulation, prior-sensitivity analysis,
     operating-characteristic evaluation, numerical validation, checkpointing,
-    automatic recovery, and reproducible long-running simulation workflows.
+    automatic recovery, reproducible long-running simulation workflows,
+    prior-data conflict diagnostics, no-change versus one-change model comparison,
+    Monte Carlo uncertainty summaries, paired prior comparisons, operating-regime
+    classification, bootstrap break-even thresholds, and runtime benchmarking.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Depends: R (>= 4.1.0)
@@ -42,3 +47,4 @@ Config/testthat/edition: 3
 URL: https://github.com/drtaiwo/ExactBayesCP
 BugReports: https://github.com/drtaiwo/ExactBayesCP/issues
 Config/roxygen2/version: 8.0.0
+NeedsCompilation: no

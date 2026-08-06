@@ -9,7 +9,7 @@ bibentry(
     person("O. M.", "Oladoja")
   ),
   year = "2026",
-  note = "R package version 0.2.3",
-  doi = "10.5281/zenodo.21554871",
+  note = "R package version 0.3.0",
+  doi = "10.5281/zenodo.21554870",
   url = "https://github.com/drtaiwo/ExactBayesCP"
 )

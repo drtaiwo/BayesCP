@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use ExactBayesCP in your research, please cite this software."
 title: "ExactBayesCP: Exact Bayesian Gaussian Single Change-Point Analysis Using Informative Conjugate Priors"
 type: software
-version: 0.2.3
+version: 0.3.0
 
 authors:
   - family-names: "Adegoke"
@@ -20,7 +20,7 @@ url: "https://github.com/drtaiwo/ExactBayesCP"
 
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.21554871"
-    description: "Zenodo DOI for ExactBayesCP version 0.2.3"
+    value: "10.5281/zenodo.21554870"
+    description: "Zenodo concept DOI representing all ExactBayesCP versions"
 
 license: MIT

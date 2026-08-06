@@ -17,15 +17,17 @@ bayescp_run_study(
 )
 }
 \arguments{
-\item{scenarios}{Data frame with columns `scenario_id`, `n`, `delta`, and
-`rho`. Optional columns are `mu1` and `sigma`.}
+\item{scenarios}{Data frame with columns `scenario_id`, `n`, `delta`, and `rho`.
+Optional columns include `mu1`, `sigma`, `sigma1`, `sigma2`,
+`error_distribution`, `df`, and `ar1`.}
 
 \item{priors}{Named list of `bayescp_prior` objects or a function taking a
 scenario row and returning such a list.}
 
 \item{replications}{Number of Monte Carlo replications per scenario.}
 
-\item{draws}{Direct posterior draws per fitted prior.}
+\item{draws}{Direct posterior draws per fitted prior. Zero is recommended
+when only change-point operating characteristics are required.}
 
 \item{output_dir}{Output directory.}
 
@@ -41,6 +43,6 @@ scenario row and returning such a list.}
 A list containing scenario results and checkpoint information.
 }
 \description{
-Completed scenario checkpoints are validated and reused automatically.
-Invalid or incompatible checkpoints are recomputed.
+Completed scenario checkpoints are validated using a configuration signature
+and reused automatically. Incomplete compatible checkpoints are resumed.
 }

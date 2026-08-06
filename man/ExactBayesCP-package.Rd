@@ -12,7 +12,7 @@ The package supports collapsed posterior computation, direct posterior
 simulation, posterior summaries, visualization, numerical validation,
 checkpoint recovery, and reproducible Monte Carlo simulation workflows.
 
-Provides exact conjugate Bayesian inference for a single change point in the mean of a Gaussian sequence under a common variance. The package supports weakly informative and informative conjugate prior configurations, collapsed posterior computation, direct posterior simulation, prior-sensitivity analysis, operating-characteristic evaluation, numerical validation, checkpointing, automatic recovery, and reproducible long-running simulation workflows.
+Provides exact conjugate Bayesian inference for a single change point in the mean of a Gaussian sequence under a common variance. The package supports flexible weakly informative and informative conjugate prior configurations, including preset, direct-hyperparameter, expert-knowledge, inverse-gamma, and scaled inverse-chi-square interfaces, collapsed posterior computation, direct posterior simulation, prior-sensitivity analysis, operating-characteristic evaluation, numerical validation, checkpointing, automatic recovery, reproducible long-running simulation workflows, prior-data conflict diagnostics, no-change versus one-change model comparison, Monte Carlo uncertainty summaries, paired prior comparisons, operating-regime classification, bootstrap break-even thresholds, and runtime benchmarking.
 }
 \details{
 The principal functions are:
@@ -54,7 +54,7 @@ summary(fit)
 \references{
 Adegoke, T. M., Yahya, W. B., and Oladoja, O. M. (2026).
 ExactBayesCP: Exact Bayesian Gaussian Single Change-Point Analysis Using
-Informative Conjugate Priors. R package version 0.2.2.
+Informative Conjugate Priors. R package version 0.3.0.
 }
 \seealso{
 \code{\link{bayescp_fit}},
